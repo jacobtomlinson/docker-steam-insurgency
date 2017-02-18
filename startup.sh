@@ -3,7 +3,7 @@
 COMMAND=$1
 shift
 
-if [ "$COMMAND" -eq "update" ] || [ "$COMMAND" -eq "updaterun" ]; then
+if [ "$COMMAND" == "update" ] || [ "$COMMAND" == "updaterun" ]; then
   /opt/steamcmd/steamcmd.sh \
               +login anonymous \
               +force_install_dir /opt/insurgency \
@@ -11,6 +11,6 @@ if [ "$COMMAND" -eq "update" ] || [ "$COMMAND" -eq "updaterun" ]; then
               +quit
 fi   
 
-if [ "$COMMAND" -eq "run" ] || [ "$COMMAND" -eq "updaterun" ]; then            
+if [ "$COMMAND" == "run" ] || [ "$COMMAND" == "updaterun" ]; then            
    /opt/insurgency/srcds_run -game insurgency $@
 fi
