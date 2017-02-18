@@ -6,5 +6,5 @@ $ docker run -ti --rm \
   -p 27015:27015/udp \
   -v $PWD/server.cfg:/opt/insurgency/insurgency/cfg/server.cfg \
   jacobtomlinson/steam-insurgency:latest \
-  -game insurgency -console
+  -console
 ```
