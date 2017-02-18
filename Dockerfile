@@ -6,6 +6,7 @@ RUN mkdir /opt/insurgency
 
 # Add startup script
 ADD startup.sh /usr/src/app/startup.sh
+RUN chmod +x /usr/src/app/startup.sh
 
 # Make server port available to host
 EXPOSE 27015
