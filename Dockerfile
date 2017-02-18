@@ -10,11 +10,11 @@ EXPOSE 27015
 WORKDIR /opt/insurgency
 
 # Update and run insurgency
-ENTRYPOINT ["/opt/steamcmd/steamcmd.sh", 
-            "+login", "anonymous", 
-            "+force_install_dir", "/opt/insurgency", 
-            "+app_update", "237410", "validate",
-            "+quit", "&&",
+ENTRYPOINT ["/opt/steamcmd/steamcmd.sh", \
+            "+login", "anonymous", \
+            "+force_install_dir", "/opt/insurgency", \
+            "+app_update", "237410", "validate", \
+            "+quit", "&&", \
             "/opt/insurgency/srcds_run"]
 
 # Run in insurgency in console mode
