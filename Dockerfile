@@ -15,4 +15,7 @@ ENTRYPOINT ["/opt/steamcmd/steamcmd.sh",
             "+force_install_dir", "/opt/insurgency", 
             "+app_update", "237410", "validate",
             "+quit", "&&",
-            "/opt/insurgency/srcds_run", "-game", "insurgency"]
+            "/opt/insurgency/srcds_run"]
+
+# Run in insurgency in console mode
+CMD ["-game", "insurgency", "-console"]
