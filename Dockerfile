@@ -4,18 +4,16 @@ MAINTAINER Jacob Tomlinson <jacob@tom.linson.uk>
 # Create insurgency directory
 RUN mkdir /opt/insurgency
 
+# Add startup script
+ADD startup.sh /usr/src/app/startup.sh
+
 # Make server port available to host
 EXPOSE 27015
 
 WORKDIR /opt/insurgency
 
 # Update and run insurgency
-ENTRYPOINT ["/opt/steamcmd/steamcmd.sh", \
-            "+login", "anonymous", \
-            "+force_install_dir", "/opt/insurgency", \
-            "+app_update", "237410", "validate", \
-            "+quit", ";", \
-            "/opt/insurgency/srcds_run"]
+ENTRYPOINT ["/usr/src/app/startup.sh"]
 
 # Run in insurgency in console mode
-CMD ["-game", "insurgency", "-console"]
+CMD ["updaterun", "-console"]
